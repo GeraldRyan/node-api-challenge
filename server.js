@@ -8,7 +8,7 @@ server.use(express.json()) // do not forget!!
 
 
 server.use('/actions', actionRouter)
-// server.use('/projects', projectRouter)
+server.use('/projects', projectRouter)
 
 
 server.get('/', (req, res)=>{

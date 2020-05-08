@@ -40,13 +40,24 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+# I learned what express is. It is a middleware library that helps node perform its routing operations. 
+# I lerned how to implemnet it, that you can run native or custom middleware functions.  
+
 - [ ] Describe Middleware?
+
+# custom or built in functions that intercept a flow or thread, perform operations or take steps and then continue on or take a different path based on logic, possibly modifying the data. 
 
 - [ ] Describe a Resource?
 
+# What clients (uses) are looking for when they make get requests, or what they're looking to update or delete with other requests. Basically what's on the world wide web. Data. Html pages.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+# It can return a success code like 201 or anything in the 200s that contains semantic meaning. It can also return an object that contains custom messages. 
+
 - [ ] How can we partition our application into sub-applications?
+
+# Just like front end we can break our project into separate modules or files, and import and export them, In this case we can create separate routes, which is similar to components in reactJS. 
 
 ## Minimum Viable Product
 

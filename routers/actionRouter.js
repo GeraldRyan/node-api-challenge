@@ -14,7 +14,12 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     actions.get(req.params.id)
         .then(theAction => {
+           if (theAction != null) {  
             res.status(200).json(theAction)
+           }
+           else {
+             res.status(400).json("Please enter valid id")
+           }
         })
         .catch(err => {
             res.status(500).json({ message: "Action Not found" })

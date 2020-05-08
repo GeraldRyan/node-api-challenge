@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
                 res.status(500).json({ message: err.message })
             })
     } else {
-        res.status(318).json("Please provide a name and description")
+        res.status(318).json("Please provide a notes and description and matching project_id")
 
     }
 

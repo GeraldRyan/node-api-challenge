@@ -11,15 +11,10 @@ router.get('/', (req, res) => {
         })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', validateById, (req, res) => {
     actions.get(req.params.id)
         .then(theAction => {
-           if (theAction != null) {  
             res.status(200).json(theAction)
-           }
-           else {
-             res.status(400).json("Please enter valid id")
-           }
         })
         .catch(err => {
             res.status(500).json({ message: "Action Not found" })
@@ -43,7 +38,7 @@ router.post('/', (req, res) => {
 
 })
 
-router.put('/:id', (req, res) => {
+router.put('/:id', validateById, (req, res) => {
     actions.update(req.params.id, req.body)
         .then(updatedAction => {
             res.status(200).json(updatedAction)
@@ -53,7 +48,7 @@ router.put('/:id', (req, res) => {
         })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', validateById, (req, res) => {
     actions.remove(req.params.id)
         .then(asDeleted => {
             res.status(200).json(asDeleted)
@@ -62,5 +57,22 @@ router.delete('/:id', (req, res) => {
             res.status(500).json({ message: "Internal Server Error" })
         })
 })
+
+
+
+function validateById (req, res, next) {
+
+  actions.get(req.params.id)
+  .then(bExists =>{
+    if (bExists == null){
+      res.status(400).json("Thou Shall not pass. (Wrong ID)")
+    }
+    else{
+      next()
+    }
+  })
+
+}
+
 
 module.exports = router

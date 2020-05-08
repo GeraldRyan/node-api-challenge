@@ -53,7 +53,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What can the API return to help clients know if a request was successful?
 
-# It can return a success code like 201 or anything in the 200s. 
+# It can return a success code like 201 or anything in the 200s that contains semantic meaning. It can also return an object that contains custom messages. 
 
 - [ ] How can we partition our application into sub-applications?
 

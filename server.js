@@ -4,6 +4,7 @@ const server = express()
 const actionRouter = require("./routers/actionRouter")
 const projectRouter = require("./routers/projectRouter")
 
+server.use(express.json()) // do not forget!! 
 
 
 server.use('/actions', actionRouter)

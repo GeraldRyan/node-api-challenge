@@ -50,11 +50,11 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     actions.remove(req.params.id)
-        .then(allActions => {
-            res.status(200).json(allActions)
+        .then(asDeleted => {
+            res.status(200).json(asDeleted)
         })
         .catch(err => {
-            res.status(500).json({ message: "Broken" })
+            res.status(500).json({ message: "Internal Server Error" })
         })
 })
 

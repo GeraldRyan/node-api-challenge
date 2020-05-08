@@ -24,7 +24,7 @@ router.get('/:id', validateById, (req, res) => {
 
 router.post('/', (req, res) => {
   console.log("Req body", req.body)
-    if (req.body.notes && req.body.description) {
+    if (req.body.name && req.body.description) {
         projects.insert(req.body)
             .then(newProject => {
                 res.status(200).json(newProject)
@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
                 res.status(500).json({ message: err.message })
             })
     } else {
-        res.status(318).json("Please provide a notes and description and matching project_id")
+        res.status(318).json("Name and description required")
 
     }
 
